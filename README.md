@@ -1,4 +1,3 @@
-# User Management API
 
 ![Java](https://img.shields.io/badge/Java-17-blue?logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-brightgreen?logo=springboot)
@@ -6,11 +5,28 @@
 ![Maven](https://img.shields.io/badge/Maven-3.9-red?logo=apachemaven)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A production-ready, portfolio-quality REST API for managing user accounts, built
-with **Spring Boot 3**, **Spring Data JPA**, and **PostgreSQL**. Demonstrates
-clean layered architecture, proper error handling, validation, pagination,
-Swagger documentation, and a comprehensive test suite.
+# Spring Boot User Management API
 
+A production-ready REST API for managing user accounts built with Java and Spring Boot.
+
+## Features
+
+- Create, update, delete and list users
+- Pagination and sorting support
+- Email uniqueness validation
+- Exception handling with proper HTTP status codes
+- Swagger/OpenAPI documentation
+- Docker support for PostgreSQL
+
+## Tech Stack
+
+- Java 17
+- Spring Boot
+- Spring Data JPA
+- PostgreSQL
+- Docker
+- Maven
+- Swagger / OpenAPI
 ---
 
 ## Tech Stack
@@ -115,6 +131,26 @@ GET /api/v1/users?page=1&size=5&sort=createdAt,desc
 
 ---
 
+## Run the Project
+
+Clone the repository:
+
+git clone https://github.com/gcandelario/springboot-user-management-api.git
+
+Navigate to the project:
+
+cd springboot-user-management-api
+
+Start the database:
+
+docker-compose up -d
+
+Run the application:
+
+mvn spring-boot:run
+
+---
+
 ## Sample curl Requests
 
 **Create a user**
@@ -161,6 +197,35 @@ curl -X PATCH http://localhost:8080/api/v1/users/1 \
 ```bash
 curl -X DELETE http://localhost:8080/api/v1/users/1
 ```
+
+---
+
+## API Endpoints
+
+Create user
+
+POST /api/v1/users
+
+Example request:
+
+{
+  "firstName": "George",
+  "lastName": "Candelario",
+  "email": "george@example.com",
+  "phoneNumber": "+1-787-000-0000"
+}
+
+Get all users
+
+GET /api/v1/users?page=0&size=10&sort=lastName,asc
+
+---
+
+## API Documentation
+
+Swagger UI available at:
+
+http://localhost:8080/swagger-ui.html
 
 ---
 
@@ -230,6 +295,10 @@ The raw OpenAPI JSON spec is at:
 ```
 http://localhost:8080/api-docs
 ```
+
+---
+
+<img width="2400" height="894" alt="image" src="https://github.com/user-attachments/assets/17a63792-9538-416a-b5ec-0ee39a81aacc" />
 
 ---
 
