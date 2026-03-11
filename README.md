@@ -131,6 +131,36 @@ GET /api/v1/users?page=1&size=5&sort=createdAt,desc
 
 ---
 
+
+## Project Structure
+
+src/main/java/.../
+
+controller
+Handles REST API endpoints.
+
+service
+Contains business logic.
+
+repository
+Spring Data JPA repositories for database operations.
+
+model
+Entity classes mapped to PostgreSQL tables.
+
+exception
+Custom exception handling and error responses.
+
+---
+
+## Architecture
+
+Client → REST API (Spring Boot) → Service Layer → Repository → PostgreSQL
+
+
+---
+
+
 ## Run the Project
 
 Clone the repository:
